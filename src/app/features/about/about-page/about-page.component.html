@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="end">
+      <ion-menu-toggle>
+        <ion-button size="large">
+          <ion-icon name="menu-outline" style="font-size: 3.3rem;"></ion-icon>
+        </ion-button>
+    </ion-menu-toggle>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="about-container">
+    <!-- Profile / App Icon -->
+    <div class="about-logo">
+      <ion-icon name="information-circle-outline" size="large"></ion-icon>
+    </div>
+
+    <!-- Title & Subtitle -->
+    <div class="about-text">
+      <h1 class="about-title">{{ 'ABOUT_TITLE' | translate }}</h1>
+      <p class="about-subtitle">{{ 'ABOUT_SUBTITLE' | translate }}</p>
+    </div>
+
+    <!-- Extra Info -->
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>{{ 'ABOUT_APP' | translate }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>
+          {{ 'ABOUT_DESCRIPTION' | translate }}
+        </p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+      <div slot="start" class="footer-text">
+        <ion-icon name="people-outline"></ion-icon>
+        {{ 'ABOUT_TEAM' | translate }}: Admin Circuit Devs
+      </div>
+      <div slot="end" class="footer-text">
+        <ion-icon name="code-slash-outline"></ion-icon>
+        {{ 'ABOUT_VERSION' | translate }}: 1.0.0
+      </div>
+  </ion-toolbar>
+</ion-footer>

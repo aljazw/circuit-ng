@@ -1,0 +1,23 @@
+<ion-header class="transparent-header">
+  <ion-toolbar >
+    <ion-buttons slot="end">
+      <ion-menu-toggle>
+        <ion-button size="large">
+          <ion-icon name="menu-outline" style="font-size: 3.3rem;"></ion-icon>
+        </ion-button>
+    </ion-menu-toggle>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="welcome-container">
+    <div class="welcome-text">
+      <h1 class="welcome-title">{{'WELCOME_TITLE' | translate}}</h1>
+      <p class="welcome-subtitle">{{'WELCOME_SUBTITLE' | translate}}</p>
+    </div>
+    <ion-button shape="round" size="large" strong color="danger" routerLink="/login" class="get-started-btn">
+      {{'GET_STARTED' | translate}}
+    </ion-button>
+  </div>
+</ion-content>

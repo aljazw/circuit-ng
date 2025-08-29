@@ -1,0 +1,12 @@
+.header {
+    box-shadow: none;
+}
+.tool-bar {
+    padding-right: 0.5rem;
+}
+
+ion-item.selected {  
+    --background: #f0f0f0;
+    font-weight: 500;     
+    --inner-border-width: 0;
+}

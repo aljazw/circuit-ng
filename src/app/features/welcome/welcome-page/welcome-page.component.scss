@@ -1,0 +1,67 @@
+.transparent-header {
+  box-shadow: none;
+}
+
+.welcome-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 2em;
+  text-align: center;
+  transform: translateY(-2.6rem);
+}
+
+.get-started-btn {
+  min-width: 18rem;
+  margin-top: 2.8rem;
+}
+
+
+
+.welcome-text {
+  text-align: center;
+  color: #222;
+}
+
+.welcome-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  animation: fadeInDown 1s ease-out forwards;
+}
+
+.welcome-subtitle {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #666;
+  opacity: 0;
+  animation: fadeInUp 1.2s ease-out forwards;
+  animation-delay: 0.7s; /* appears after the title */
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
