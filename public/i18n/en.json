@@ -2,13 +2,46 @@
   "WELCOME_TITLE": "Welcome to Admin Circuit",
   "WELCOME_SUBTITLE": "Manage your system with ease",
   "GET_STARTED": "Get Started",
+
   "ABOUT": "About",
   "WELCOME": "Welcome",
+
   "ABOUT_TITLE": "About Admin Circuit",
   "ABOUT_SUBTITLE": "Your smart system manager",
   "ABOUT_APP": "Our App",
   "ABOUT_DESCRIPTION": "Admin Circuit helps you manage your system with ease and efficiency. Built with Ionic & Angular, it provides a clean and fast experience.",
   "ABOUT_VERSION": "Version",
-  "ABOUT_TEAM": "Team"
+  "ABOUT_TEAM": "Team",
+
+  "LOGIN": "Login",
+  "REGISTER": "Register",
+
+  "LOGIN_TITLE": "Welcome Back",
+  "LOGIN_SUBTITLE": "Please login to continue",
+  "NO_ACCOUNT_MESSAGE": "Don't have an account?",
+  "SIGN_UP": "Sign up",
+
+  "REGISTER_TITLE": "Join Admin Circuit",
+  "REGISTER_SUBTITLE": "Create your account and get started",
+  "ALREADY_ACCOUNT_MESSAGE": "Already have an account?",
+  "SIGN_IN": "Sign in",
+
+  "WELCOME_MESSAGE": "Welcome aboard! Let’s get you started.",
+
+  "USERNAME": "Username",
+  "USERNAME_REQUIRED": "Username is required",
+  "USERNAME_TOO_SHORT": "Username must be at least 4 characters",
+
+  "EMAIL": "Email",
+  "EMAIL_REQUIRED": "Email is required",
+  "EMAIL_INVALID": "Email is invalid",
+
+  "PASSWORD": "Password",
+  "PASSWORD_REQUIRED": "Password is required",
+  "PASSWORD_TOO_SHORT": "Password must be at least 8 characters",
+
+  "CONFIRM_PASSWORD": "Confirm Password",
+  "CONFIRM_PASSWORD_REQUIRED": "Please confirm your password",
+  "PASSWORDS_DO_NOT_MATCH": "Passwords do not match"
 
 }

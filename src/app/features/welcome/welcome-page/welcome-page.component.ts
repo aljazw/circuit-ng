@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonMenuButton, IonMenuToggle, IonToolbar } from '@ionic/angular/standalone';
 import { TranslatePipe } from '@ngx-translate/core';
 import { addIcons } from 'ionicons';
@@ -17,7 +18,8 @@ import { menuOutline } from 'ionicons/icons';
     IonIcon,
     IonMenuToggle,
     IonButton,
-    TranslatePipe
+    TranslatePipe,
+    RouterModule
   ]
 })
 export class WelcomePageComponent  implements OnInit {

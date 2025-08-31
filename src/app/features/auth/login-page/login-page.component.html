@@ -1,0 +1,66 @@
+<ion-content class="ion-padding">
+  <div class="login-content">
+    <div class="login-container">
+      <h1 class="login-title">{{ 'LOGIN_TITLE' | translate }}</h1>
+      <p class="login-subtitle">{{ 'LOGIN_SUBTITLE' | translate }}</p>
+
+      <form [formGroup]="loginForm" (ngSubmit)="submit()">
+        <ion-item>
+          <ion-input 
+            type="email" 
+            formControlName="email"
+            [label]="'EMAIL' | translate"
+            labelPlacement="floating"
+            (ionFocus)="onFocus()"
+          >
+          </ion-input>
+        </ion-item>
+        @if (getError('email')) {
+            <ion-note color="danger">
+              {{ getError('email') | translate }}
+            </ion-note> 
+        }
+        <ion-item>
+          <ion-input 
+            type="password" 
+            formControlName="password"
+            [label]="'PASSWORD' | translate"
+            labelPlacement="floating"
+            enterkeyhint="done"
+            (ionFocus)="onFocus()"
+          >         
+        </ion-input>
+          
+        </ion-item>
+        @if (getError('password')) {
+          <ion-note color="danger">
+            {{ getError('password') | translate }}
+          </ion-note>
+        }
+
+        <ion-button 
+          expand="block" 
+          type="submit" 
+          class="login-btn"
+          color="danger"
+
+        >
+          {{ 'LOGIN' | translate }}
+        </ion-button>
+      </form>
+
+      <div class="sign-container">
+        <p class="sign-text">{{ 'NO_ACCOUNT_MESSAGE' | translate }}</p>
+        <ion-button 
+          fill="clear"
+          routerLink="/register" 
+        >
+          {{ 'SIGN_UP' | translate }}
+        </ion-button>
+      </div>
+      
+    </div>
+  </div>
+</ion-content>
+
+
