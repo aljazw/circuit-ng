@@ -1,0 +1,13 @@
+<ion-button 
+  expand="block" 
+  type="submit" 
+  class="login-btn"
+  color="danger"
+  [disabled]="loading"
+>
+  @if (!loading) {
+    {{ label | translate }}
+  } @else {
+    <ion-spinner name="crescent"></ion-spinner>
+  }
+</ion-button>

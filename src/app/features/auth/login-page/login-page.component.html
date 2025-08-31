@@ -1,3 +1,4 @@
+<app-header></app-header>
 <ion-content class="ion-padding">
   <div class="login-content">
     <div class="login-container">
@@ -38,15 +39,7 @@
           </ion-note>
         }
 
-        <ion-button 
-          expand="block" 
-          type="submit" 
-          class="login-btn"
-          color="danger"
-
-        >
-          {{ 'LOGIN' | translate }}
-        </ion-button>
+        <app-auth-button [loading]="loading" label="LOGIN"></app-auth-button>
       </form>
 
       <div class="sign-container">

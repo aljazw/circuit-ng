@@ -1,3 +1,10 @@
-<p>
-  home-page works!
-</p>
+<app-header></app-header>
+<ion-content class="ion-padding">
+  <div>
+    <h1>Welcome, {{ user.displayName || user.email }}!</h1>
+    <p>Email: {{ user.email }}</p>
+    <p>User ID: {{ user.uid }}</p>
+  </div>
+</ion-content>
+
+

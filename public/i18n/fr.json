@@ -1,7 +1,47 @@
 {
   "WELCOME_TITLE": "Bienvenue sur Admin Circuit",
-  "WELCOME_SUBTITLE": "Gérez votre système facilement",
+  "WELCOME_SUBTITLE": "Gérez votre système en toute simplicité",
   "GET_STARTED": "Commencer",
+
   "ABOUT": "À propos",
-  "WELCOME": "Bienvenue"
+  "WELCOME": "Bienvenue",
+  "HOME": "Accueil",
+
+  "ABOUT_TITLE": "À propos d'Admin Circuit",
+  "ABOUT_SUBTITLE": "Votre gestionnaire de système intelligent",
+  "ABOUT_APP": "Notre application",
+  "ABOUT_DESCRIPTION": "Admin Circuit vous aide à gérer votre système facilement et efficacement. Construit avec Ionic & Angular, il offre une expérience propre et rapide.",
+  "ABOUT_VERSION": "Version",
+  "ABOUT_TEAM": "Équipe",
+
+  "LOGIN": "Connexion",
+  "REGISTER": "S'inscrire",
+
+  "LOGIN_TITLE": "Bon retour",
+  "LOGIN_SUBTITLE": "Veuillez vous connecter pour continuer",
+  "NO_ACCOUNT_MESSAGE": "Vous n'avez pas de compte ?",
+  "SIGN_UP": "S'inscrire",
+
+  "REGISTER_TITLE": "Rejoignez Admin Circuit",
+  "REGISTER_SUBTITLE": "Créez votre compte et commencez",
+  "ALREADY_ACCOUNT_MESSAGE": "Vous avez déjà un compte ?",
+  "SIGN_IN": "Se connecter",
+
+  "WELCOME_MESSAGE": "Bienvenue à bord ! Commençons.",
+
+  "USERNAME": "Nom d'utilisateur",
+  "USERNAME_REQUIRED": "Le nom d'utilisateur est requis",
+  "USERNAME_TOO_SHORT": "Le nom d'utilisateur doit comporter au moins 4 caractères",
+
+  "EMAIL": "E-mail",
+  "EMAIL_REQUIRED": "L'e-mail est requis",
+  "EMAIL_INVALID": "E-mail invalide",
+
+  "PASSWORD": "Mot de passe",
+  "PASSWORD_REQUIRED": "Le mot de passe est requis",
+  "PASSWORD_TOO_SHORT": "Le mot de passe doit comporter au moins 8 caractères",
+
+  "CONFIRM_PASSWORD": "Confirmer le mot de passe",
+  "CONFIRM_PASSWORD_REQUIRED": "Veuillez confirmer votre mot de passe",
+  "PASSWORDS_DO_NOT_MATCH": "Les mots de passe ne correspondent pas"
 }

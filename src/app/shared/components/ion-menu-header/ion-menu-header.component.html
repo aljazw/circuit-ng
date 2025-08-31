@@ -1,0 +1,16 @@
+<ion-header>
+    <ion-toolbar color="teriatry" class="tool-bar">
+        <ion-buttons slot="end">
+            <ion-select
+                (ionChange)="langService.setLanguage($event.detail.value)"
+                interface="popover"
+                [value]="langService.getLanguage()"
+            >
+                <ion-select-option value="en">🇬🇧 English</ion-select-option>
+                <ion-select-option value="si">🇸🇮 Slovenščina</ion-select-option>
+                <ion-select-option value="de">🇩🇪 Deutsch</ion-select-option>
+                <ion-select-option value="fr">🇫🇷 Français</ion-select-option>
+            </ion-select>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>

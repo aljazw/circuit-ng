@@ -1,7 +1,47 @@
 {
   "WELCOME_TITLE": "Dobrodošli v Admin Circuit",
-  "WELCOME_SUBTITLE": "Upravljajte vaš sistem z lahkoto",
+  "WELCOME_SUBTITLE": "Upravljajte svoj sistem z lahkoto",
   "GET_STARTED": "Začni",
+
   "ABOUT": "O nas",
-  "WELCOME": "Dobrodošli"
+  "WELCOME": "Dobrodošli",
+  "HOME": "Domov",
+
+  "ABOUT_TITLE": "O Admin Circuit",
+  "ABOUT_SUBTITLE": "Vaš pametni upravitelj sistema",
+  "ABOUT_APP": "Naša aplikacija",
+  "ABOUT_DESCRIPTION": "Admin Circuit vam pomaga enostavno in učinkovito upravljati vaš sistem. Zgrajeno z Ionic & Angular, ponuja čisto in hitro izkušnjo.",
+  "ABOUT_VERSION": "Različica",
+  "ABOUT_TEAM": "Ekipa",
+
+  "LOGIN": "Prijava",
+  "REGISTER": "Registracija",
+
+  "LOGIN_TITLE": "Dobrodošli nazaj",
+  "LOGIN_SUBTITLE": "Prosimo, prijavite se za nadaljevanje",
+  "NO_ACCOUNT_MESSAGE": "Nimate računa?",
+  "SIGN_UP": "Registriraj se",
+
+  "REGISTER_TITLE": "Pridružite se Admin Circuit",
+  "REGISTER_SUBTITLE": "Ustvarite svoj račun in začnite",
+  "ALREADY_ACCOUNT_MESSAGE": "Že imate račun?",
+  "SIGN_IN": "Prijava",
+
+  "WELCOME_MESSAGE": "Dobrodošli! Začnimo.",
+
+  "USERNAME": "Uporabniško ime",
+  "USERNAME_REQUIRED": "Uporabniško ime je obvezno",
+  "USERNAME_TOO_SHORT": "Uporabniško ime mora imeti vsaj 4 znake",
+
+  "EMAIL": "E-pošta",
+  "EMAIL_REQUIRED": "E-pošta je obvezna",
+  "EMAIL_INVALID": "E-pošta ni veljavna",
+
+  "PASSWORD": "Geslo",
+  "PASSWORD_REQUIRED": "Geslo je obvezno",
+  "PASSWORD_TOO_SHORT": "Geslo mora imeti vsaj 8 znakov",
+
+  "CONFIRM_PASSWORD": "Potrdite geslo",
+  "CONFIRM_PASSWORD_REQUIRED": "Prosimo, potrdite geslo",
+  "PASSWORDS_DO_NOT_MATCH": "Gesli se ne ujemata"
 }

@@ -1,3 +1,4 @@
+<app-header></app-header>
 <ion-content class="ion-padding">
   <div class="login-content">
     <div class="login-container">
@@ -62,22 +63,14 @@
             (ionFocus)="onFocus()"
           >         
           </ion-input>
-      </ion-item>
-      @if (getError('confirmPassword')) {
-        <ion-note color="danger">
-          {{ getError('confirmPassword') | translate }}
-        </ion-note>
-      }
+        </ion-item>
+        @if (getError('confirmPassword')) {
+          <ion-note color="danger">
+            {{ getError('confirmPassword') | translate }}
+          </ion-note>
+        }
 
-        <ion-button 
-          expand="block" 
-          type="submit" 
-          class="login-btn"
-          color="danger"
-
-        >
-          {{ 'REGISTER' | translate }}
-        </ion-button>
+        <app-auth-button [loading]="loading" label="REGISTER"></app-auth-button>
       </form>
 
       <div class="sign-container">

@@ -1,48 +1,63 @@
 <ion-app>
-    <ion-menu contentId="main-content" side="end">
-        <ion-header class="header">
-            <ion-toolbar color="teriatry" class="tool-bar">
-                <ion-buttons slot="end">
-                    <ion-select
-                        (ionChange)="langService.setLanguage($event.detail.value)"
-                        interface="popover"
-                        [value]="langService.getLanguage()"
-                    >
-                        <ion-select-option value="en">🇬🇧 English</ion-select-option>
-                        <ion-select-option value="si">🇸🇮 Slovenščina</ion-select-option>
-                        <ion-select-option value="de">🇩🇪 Deutsch</ion-select-option>
-                        <ion-select-option value="fr">🇫🇷 Français</ion-select-option>
-                    </ion-select>
-                </ion-buttons>
-            </ion-toolbar>
-        </ion-header>
-        <ion-content>
-            <ion-list>
-                <ion-menu-toggle side="end" autoHide="false">
-                    <ion-item 
-                        routerLink="/welcome" 
-                        routerDirection="root" 
-                        detail="false"
-                        routerLinkActive="selected" 
-                        [routerLinkActiveOptions]="{ exact: true }"
-                    >
-                        <ion-label>{{'WELCOME' | translate}}</ion-label>
-                    </ion-item>
-                </ion-menu-toggle>
-                <ion-menu-toggle autoHide="false">
-                    <ion-item 
-                        routerLink="/about" 
-                        routerDirection="root" 
-                        detail="false"
-                        routerLinkActive="selected"
-                        [routerLinkActiveOptions]="{ exact: true }"
-                    >
-                        <ion-label>{{'ABOUT' | translate}}</ion-label>
-                    </ion-item>
-                </ion-menu-toggle>
-            </ion-list>
-        </ion-content>
-    </ion-menu>
+    @if (authService.currentUser()) {
+        <ion-menu contentId="main-content" side="end">
+            <app-ion-menu-header></app-ion-menu-header>
+            <ion-content>
+                <ion-list>
+                    <ion-menu-toggle side="end" autoHide="false">
+                        <ion-item 
+                            routerLink="/home" 
+                            routerDirection="root" 
+                            detail="false"
+                            routerLinkActive="selected" 
+                            [routerLinkActiveOptions]="{ exact: true }"
+                        >
+                            <ion-label>{{'HOME' | translate}}</ion-label>
+                        </ion-item>
+                    </ion-menu-toggle>
+                </ion-list>
+            </ion-content>
+            <ion-footer>
+                <ion-toolbar>
+                    <ion-button expand="full" color="danger" (click)="authService.logout()">
+                        <ion-icon slot="start" name="log-out-outline"></ion-icon>
+                        Logout
+                    </ion-button>
+                </ion-toolbar>
+            </ion-footer>
+        </ion-menu>
+    } @else {
+        <ion-menu contentId="main-content" side="end">
+            <app-ion-menu-header></app-ion-menu-header>
+            <ion-content>
+                <ion-list>
+                    <ion-menu-toggle side="end" autoHide="false">
+                        <ion-item 
+                            routerLink="/welcome" 
+                            routerDirection="root" 
+                            detail="false"
+                            routerLinkActive="selected" 
+                            [routerLinkActiveOptions]="{ exact: true }"
+                        >
+                            <ion-label>{{'WELCOME' | translate}}</ion-label>
+                        </ion-item>
+                    </ion-menu-toggle>
+                    <ion-menu-toggle autoHide="false">
+                        <ion-item 
+                            routerLink="/about" 
+                            routerDirection="root" 
+                            detail="false"
+                            routerLinkActive="selected"
+                            [routerLinkActiveOptions]="{ exact: true }"
+                        >
+                            <ion-label>{{'ABOUT' | translate}}</ion-label>
+                        </ion-item>
+                    </ion-menu-toggle>
+                </ion-list>
+            </ion-content>
+        </ion-menu>
+    }
+   
 
     <ion-router-outlet id="main-content"></ion-router-outlet>
 </ion-app>

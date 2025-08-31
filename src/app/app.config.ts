@@ -6,6 +6,10 @@ import { provideIonicAngular } from '@ionic/angular/standalone';
 import { provideTranslateService } from '@ngx-translate/core';
 import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
 import { provideHttpClient } from '@angular/common/http';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getAuth, provideAuth } from '@angular/fire/auth';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { environment } from '../environments/environment.development';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -21,6 +25,11 @@ export const appConfig: ApplicationConfig = {
       }),
       fallbackLang: 'en',
       lang: 'en'
-    })
+    }), 
+    provideFirebaseApp(() => initializeApp(environment.firebase)), 
+    provideAuth(() => getAuth()), 
+    provideFirestore(() => getFirestore())
   ]
 };
+
+

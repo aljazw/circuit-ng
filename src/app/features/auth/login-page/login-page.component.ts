@@ -4,6 +4,9 @@ import { Router, RouterModule } from '@angular/router';
 import { IonButton, IonContent, IonInput, IonItem, IonNote } from '@ionic/angular/standalone';
 import { TranslateModule } from '@ngx-translate/core';
 import { getErrorMessage } from '../form-validation';
+import { AuthService } from '../../../core/services/auth.service';
+import { HeaderComponent } from "../../../shared/components/header/header.component";
+import { AuthButtonComponent } from "../auth-button/auth-button.component";
 
 @Component({
   selector: 'app-login-page',
@@ -20,32 +23,47 @@ import { getErrorMessage } from '../form-validation';
     IonInput,
     TranslateModule,
     ReactiveFormsModule,
-    RouterModule
-  ]
+    RouterModule,
+    HeaderComponent,
+    AuthButtonComponent
+]
 })
 export class LoginPageComponent  implements OnInit {
   loginForm!: FormGroup;
   submitted = false;
+
+  loading = false;
 
   getError(field: string) {
     return getErrorMessage(this.loginForm.get(field), field, this.submitted);
   }
 
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private authService: AuthService) {
     this.loginForm = new FormGroup({
-      email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [Validators.required, Validators.minLength(8)])
+      email: new FormControl('joze@gmail.com', [Validators.required, Validators.email]),
+      password: new FormControl('11111111', [Validators.required, Validators.minLength(8)])
     });
   }
 
   ngOnInit() {}
 
-  submit() {
+  async submit() {
     this.submitted = true;
-    if (this.loginForm.valid) {
-      this.router.navigate(['/home'])
-    }
+
+    if (!this.loginForm.valid) return;
+
+    const { email, password } = this.loginForm.value;
+
+    this.loading = true;
+
+    try {
+      await this.authService.login(email, password);
+    } catch (error: any) {
+      console.error('Login failed:', error);
+    } finally {
+      this.loading = false;
+    }   
   }
 
   onFocus() {
