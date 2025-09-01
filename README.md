@@ -1,59 +1,69 @@
-# CircuitAdmin
+# Circuit Admin (Angular + Ionic)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.5.
+This project is a **simple Angular + Ionic application** 
 
-## Development server
+## ✨ Features
 
-To start a local development server, run:
+- **Firebase Authentication**: Login & Register users
+- **Multi-language support**: Switch between English, Slovenian, French, and German
+- **Responsive UI**: Works on web and mobile (Ionic)
 
+## 🛠️ Tech Stack
+
+- [Angular](https://angular.io/) – Frontend framework
+- [Ionic](https://ionicframework.com/) – Mobile-first UI components
+- [Firebase](https://firebase.google.com/) – Authentication & Firestore
+- TypeScript
+- HTML / SCSS
+
+## 📂 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone git@github.com:your-username/circuit-ng.git
+cd circuit-ng
+```
+
+### 2. Install dependencies
+```bash
+npm install
+```
+
+### 3. Configure Firebase
+
+1. Go to the [Firebase Console](https://console.firebase.google.com/) and create a new project.  
+2. Install AngularFire and Firebase in your project:
+
+```bash
+ng add @angular/fire
+```
+4. During setup, choose your Firebase project and select the features you need (Authentication, Firestore, Hosting, etc.).
+
+5. Replace your src/environments/environment.ts with your Firebase config:
+```ts
+export const environment = {
+  production: false,
+  firebase: {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_PROJECT.firebaseapp.com",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_PROJECT.appspot.com",
+    messagingSenderId: "YOUR_SENDER_ID",
+    appId: "YOUR_APP_ID"
+  }
+};
+```
+
+### 4. Run the development server
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 🤝 Contributing
 
-## Code scaffolding
+This is a demo project and is not intended for adding new features, but you are free to fork it and use it as your own.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 📄 License
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+This project is licensed under the [MIT License](LICENSE).
