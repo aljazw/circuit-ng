@@ -43,5 +43,17 @@
 
   "CONFIRM_PASSWORD": "Confirmer le mot de passe",
   "CONFIRM_PASSWORD_REQUIRED": "Veuillez confirmer votre mot de passe",
-  "PASSWORDS_DO_NOT_MATCH": "Les mots de passe ne correspondent pas"
+  "PASSWORDS_DO_NOT_MATCH": "Les mots de passe ne correspondent pas",
+
+  "WRONG_CREDENTIALS": "L’e-mail ou le mot de passe est incorrect.",
+  "LOGIN_FAILED": "Échec de la connexion. Veuillez réessayer.",
+
+  "EMAIL_IN_USE": "Cet e-mail est déjà enregistré. Veuillez en utiliser un autre.",
+  "REGISTER_FAILED": "Échec de l’inscription. Veuillez réessayer.",
+
+  "WELCOME_BACK": "Bon retour",
+  "ACCOUNT_INFO": "Informations de votre compte",
+  "USER_ID": "Identifiant utilisateur",
+  "JOINED": "Inscrit le"
+
 }

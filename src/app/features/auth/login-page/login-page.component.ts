@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
-import { IonButton, IonContent, IonInput, IonItem, IonNote } from '@ionic/angular/standalone';
-import { TranslateModule } from '@ngx-translate/core';
+import { IonButton, IonContent, IonInput, IonItem, IonNote, ToastController } from '@ionic/angular/standalone';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { getErrorMessage } from '../form-validation';
 import { AuthService } from '../../../core/services/auth.service';
 import { HeaderComponent } from "../../../shared/components/header/header.component";
 import { AuthButtonComponent } from "../auth-button/auth-button.component";
+import { addIcons } from 'ionicons';
+import { alertCircleOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-login-page',
@@ -39,10 +41,16 @@ export class LoginPageComponent  implements OnInit {
   }
 
 
-  constructor(private router: Router, private authService: AuthService) {
+  constructor(
+    private authService: AuthService,
+    private translate: TranslateService,
+    private toastController: ToastController,
+  ) {
+    addIcons({ alertCircleOutline });
+
     this.loginForm = new FormGroup({
-      email: new FormControl('joze@gmail.com', [Validators.required, Validators.email]),
-      password: new FormControl('11111111', [Validators.required, Validators.minLength(8)])
+      email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', [Validators.required, Validators.minLength(8)])
     });
   }
 
@@ -60,10 +68,25 @@ export class LoginPageComponent  implements OnInit {
     try {
       await this.authService.login(email, password);
     } catch (error: any) {
-      console.error('Login failed:', error);
+      if (error.code === 'auth/invalid-credential') {
+        this.translate.get('WRONG_CREDENTIALS').subscribe(msg => this.showErrorMessage(msg));
+      } else {
+        this.translate.get('LOGIN_FAILED').subscribe(msg => this.showErrorMessage(msg));
+      }
     } finally {
       this.loading = false;
     }   
+  }
+
+  async showErrorMessage(message: string) {
+    const toast = await this.toastController.create({
+      message,
+      duration: 3000,      
+      color: 'danger',     
+      position: 'top',    
+      icon: 'alert-circle-outline' 
+    });
+    toast.present();
   }
 
   onFocus() {

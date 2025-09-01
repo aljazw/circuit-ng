@@ -43,5 +43,17 @@
 
   "CONFIRM_PASSWORD": "Passwort bestätigen",
   "CONFIRM_PASSWORD_REQUIRED": "Bitte bestätigen Sie Ihr Passwort",
-  "PASSWORDS_DO_NOT_MATCH": "Passwörter stimmen nicht überein"
+  "PASSWORDS_DO_NOT_MATCH": "Passwörter stimmen nicht überein",
+
+  "WRONG_CREDENTIALS": "E-Mail oder Passwort ist falsch.",
+  "LOGIN_FAILED": "Anmeldung fehlgeschlagen. Bitte versuchen Sie es erneut.",
+
+  "EMAIL_IN_USE": "Diese E-Mail-Adresse ist bereits registriert. Bitte verwenden Sie eine andere.",
+  "REGISTER_FAILED": "Registrierung fehlgeschlagen. Bitte versuchen Sie es erneut.",
+
+  "WELCOME_BACK": "Willkommen zurück",
+  "ACCOUNT_INFO": "Ihre Kontoinformationen",
+  "USER_ID": "Benutzer-ID",
+  "JOINED": "Beigetreten am"
+
 }

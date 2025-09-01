@@ -1,12 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Router, RouterModule } from '@angular/router';
-import { IonButton, IonContent, IonInput, IonItem, IonNote } from '@ionic/angular/standalone';
-import { TranslateModule } from '@ngx-translate/core';
+import { RouterModule } from '@angular/router';
+import { IonButton, IonContent, IonInput, IonItem, IonNote, ToastController } from '@ionic/angular/standalone';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { getErrorMessage, passwordMatchValidator } from '../form-validation';
 import { AuthService } from '../../../core/services/auth.service';
 import { HeaderComponent } from "../../../shared/components/header/header.component";
 import { AuthButtonComponent } from "../auth-button/auth-button.component";
+import { addIcons } from 'ionicons';
+import { alertCircleOutline } from 'ionicons/icons';
+import { doc, setDoc } from 'firebase/firestore';
+import { Firestore } from '@angular/fire/firestore';
 
 
 @Component({
@@ -40,12 +44,20 @@ export class RegisterPageComponent  implements OnInit {
   }
 
 
-  constructor(private router: Router, private authService: AuthService) {
+  constructor(
+    private authService: AuthService,
+    private translate: TranslateService,
+    private toastController: ToastController,
+    private firestore: Firestore
+  ) {
+  
+    addIcons({ alertCircleOutline });
+
     this.loginForm = new FormGroup({
-      username: new FormControl('joze', [Validators.required, Validators.minLength(4)]),
-      email: new FormControl('joze@gmail.com', [Validators.required, Validators.email]),
-      password: new FormControl('11111111', [Validators.required, Validators.minLength(8)]),
-      confirmPassword: new FormControl('11111111', [Validators.required])
+      username: new FormControl('', [Validators.required, Validators.minLength(4)]),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', [Validators.required, Validators.minLength(8)]),
+      confirmPassword: new FormControl('', [Validators.required])
     }, {validators: passwordMatchValidator });
   }
 
@@ -56,17 +68,41 @@ export class RegisterPageComponent  implements OnInit {
 
     if (!this.loginForm.valid) return;
 
-    const { email, password } = this.loginForm.value;
+    const { email, password, username } = this.loginForm.value;
 
     this.loading = true;
 
     try {
-      await this.authService.register(email, password);
+      const userCredential = await this.authService.register(email, password);
+    
+      if (userCredential.user) {
+        const uid = userCredential.user.uid;
+        await setDoc(doc(this.firestore, 'users', uid), {
+          username,
+          email,
+          createdAt: new Date()
+        });
+      }
     } catch (error: any) {
-      console.error('REgister failed:', error);
+      if (error.code === 'auth/email-already-in-use') {
+        this.translate.get('EMAIL_IN_USE').subscribe(msg => this.showErrorMessage(msg));
+      } else {
+        this.translate.get('REGISTER_FAILED').subscribe(msg => this.showErrorMessage(msg));
+      }
     } finally {
       this.loading = false;
     }
+  }
+
+  async showErrorMessage(message: string) {
+    const toast = await this.toastController.create({
+      message,
+      duration: 3000,      
+      color: 'danger',     
+      position: 'top',    
+      icon: 'alert-circle-outline' 
+    });
+    toast.present();
   }
 
   onFocus() {
@@ -74,3 +110,5 @@ export class RegisterPageComponent  implements OnInit {
   }
 
 }
+
+

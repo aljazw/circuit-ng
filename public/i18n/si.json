@@ -43,5 +43,16 @@
 
   "CONFIRM_PASSWORD": "Potrdite geslo",
   "CONFIRM_PASSWORD_REQUIRED": "Prosimo, potrdite geslo",
-  "PASSWORDS_DO_NOT_MATCH": "Gesli se ne ujemata"
+  "PASSWORDS_DO_NOT_MATCH": "Gesli se ne ujemata",
+  
+  "WRONG_CREDENTIALS": "E-pošta ali geslo je napačno.",
+  "LOGIN_FAILED": "Prijava ni uspela. Poskusite znova.",
+
+  "EMAIL_IN_USE": "Ta e-poštni naslov je že registriran. Uporabite drugega.",
+  "REGISTER_FAILED": "Registracija ni uspela. Poskusite znova.",
+
+  "WELCOME_BACK": "Dobrodošel nazaj",
+  "ACCOUNT_INFO": "Podatki o računu",
+  "USER_ID": "ID uporabnika",
+  "JOINED": "Pridružen"
 }

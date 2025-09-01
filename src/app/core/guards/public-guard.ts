@@ -1,7 +1,7 @@
 import { CanActivateFn, Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { inject } from '@angular/core';
-import { User } from '../../shared/models/user.model';
+import { User } from 'firebase/auth';
 
 export const publicGuard: CanActivateFn = async () => {
   const authService = inject(AuthService);

@@ -1,10 +1,22 @@
 <app-header></app-header>
+
 <ion-content class="ion-padding">
-  <div>
-    <h1>Welcome, {{ user.displayName || user.email }}!</h1>
-    <p>Email: {{ user.email }}</p>
-    <p>User ID: {{ user.uid }}</p>
+  <div class="container">
+    <div class="welcome-card">
+      <h1>{{ 'WELCOME_BACK' | translate }}, {{ userData?.username }}! 👋</h1>
+
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Your Account Info</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p><strong>{{ 'EMAIL' | translate }}:</strong> {{ userData?.email }}</p>
+          <p><strong>{{ 'USERNAME' | translate }}:</strong> {{ userData?.username }}</p>
+          <p><strong>{{ 'USER_ID' | translate }}:</strong> {{ userData?.uid }}</p>
+          <p><strong>{{ 'JOINED' | translate }}:</strong> {{ userData?.createdAt?.toDate() | date:'mediumDate' }}</p>
+        </ion-card-content>
+      </ion-card>
+    </div>
   </div>
 </ion-content>
-
 

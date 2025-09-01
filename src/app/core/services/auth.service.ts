@@ -1,8 +1,7 @@
 import { Injectable, signal } from '@angular/core';
 import { Auth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from 'firebase/auth';
-import { User } from '../../shared/models/user.model';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, User, UserCredential } from 'firebase/auth';
 
 
 @Injectable({
@@ -15,22 +14,19 @@ export class AuthService {
   constructor(public auth: Auth, private router: Router) {
     this.auth.onAuthStateChanged(user => {
       if (user) {
-        this.currentUser.set({
-          uid: user.uid,
-          displayName: user.displayName,
-          email: user.email
-        });
+        this.currentUser.set(user);
       } else {
         this.currentUser.set(null);
       }
     });
   }
 
-  async register(email: string, password: string): Promise<void> {
+  async register(email: string, password: string): Promise<UserCredential> {
     return createUserWithEmailAndPassword(this.auth, email, password)
       .then(cred => {
         this.currentUser.set(cred.user);
         this.router.navigate(['/home']);
+        return cred; 
       })
   }
 

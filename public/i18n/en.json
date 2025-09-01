@@ -43,6 +43,17 @@
 
   "CONFIRM_PASSWORD": "Confirm Password",
   "CONFIRM_PASSWORD_REQUIRED": "Please confirm your password",
-  "PASSWORDS_DO_NOT_MATCH": "Passwords do not match"
+  "PASSWORDS_DO_NOT_MATCH": "Passwords do not match",
+
+  "WRONG_CREDENTIALS": "Email or password is incorrect.",
+  "LOGIN_FAILED": "Login failed. Please try again.",
+
+  "EMAIL_IN_USE": "This email is already registered. Please use another email.",
+  "REGISTER_FAILED": "Registration failed. Please try again.",
+
+  "WELCOME_BACK": "Welcome back",
+  "ACCOUNT_INFO": "Your Account Info",
+  "USER_ID": "User ID",
+  "JOINED": "Joined"
 
 }
