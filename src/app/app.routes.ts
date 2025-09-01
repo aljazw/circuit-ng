@@ -6,7 +6,7 @@ import { publicGuard } from './core/guards/public-guard';
 export const routes: Routes = [
     {
         path: '', 
-        redirectTo: 'home', 
+        redirectTo: 'welcome', 
         pathMatch: 'full', 
        
     },
@@ -19,6 +19,7 @@ export const routes: Routes = [
     {
         path: 'welcome',
         loadComponent: () => import('./features/welcome/welcome-page/welcome-page.component').then(m => m.WelcomePageComponent),
+        canActivate: [publicGuard]
     },
     {
         path: 'about',
